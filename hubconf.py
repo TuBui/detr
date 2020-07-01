@@ -32,7 +32,8 @@ def detr_resnet50(pretrained=False, num_classes=91, return_postprocessor=False):
     model = _make_detr("resnet50", dilation=False, num_classes=num_classes)
     if pretrained:
         checkpoint = torch.hub.load_state_dict_from_url(
-            url="https://dl.fbaipublicfiles.com/detr/detr-r50-e632da11.pth", map_location="cpu", check_hash=True
+            url="https://dl.fbaipublicfiles.com/detr/detr-r50-e632da11.pth", map_location="cpu",
+            check_hash=True, progress=False
         )
         model.load_state_dict(checkpoint["model"])
     if return_postprocessor:
@@ -51,7 +52,8 @@ def detr_resnet50_dc5(pretrained=False, num_classes=91, return_postprocessor=Fal
     model = _make_detr("resnet50", dilation=True, num_classes=num_classes)
     if pretrained:
         checkpoint = torch.hub.load_state_dict_from_url(
-            url="https://dl.fbaipublicfiles.com/detr/detr-r50-dc5-f0fb7ef5.pth", map_location="cpu", check_hash=True
+            url="https://dl.fbaipublicfiles.com/detr/detr-r50-dc5-f0fb7ef5.pth", map_location="cpu",
+            check_hash=True, progress=False
         )
         model.load_state_dict(checkpoint["model"])
     if return_postprocessor:
@@ -68,7 +70,8 @@ def detr_resnet101(pretrained=False, num_classes=91, return_postprocessor=False)
     model = _make_detr("resnet101", dilation=False, num_classes=num_classes)
     if pretrained:
         checkpoint = torch.hub.load_state_dict_from_url(
-            url="https://dl.fbaipublicfiles.com/detr/detr-r101-2c7b67e5.pth", map_location="cpu", check_hash=True
+            url="https://dl.fbaipublicfiles.com/detr/detr-r101-2c7b67e5.pth", map_location="cpu",
+            check_hash=True, progress=False
         )
         model.load_state_dict(checkpoint["model"])
     if return_postprocessor:
@@ -87,7 +90,8 @@ def detr_resnet101_dc5(pretrained=False, num_classes=91, return_postprocessor=Fa
     model = _make_detr("resnet101", dilation=True, num_classes=num_classes)
     if pretrained:
         checkpoint = torch.hub.load_state_dict_from_url(
-            url="https://dl.fbaipublicfiles.com/detr/detr-r101-dc5-a2e86def.pth", map_location="cpu", check_hash=True
+            url="https://dl.fbaipublicfiles.com/detr/detr-r101-dc5-a2e86def.pth", map_location="cpu",
+            check_hash=True, progress=False
         )
         model.load_state_dict(checkpoint["model"])
     if return_postprocessor:
@@ -110,7 +114,7 @@ def detr_resnet50_panoptic(
         checkpoint = torch.hub.load_state_dict_from_url(
             url="https://dl.fbaipublicfiles.com/detr/detr-r50-panoptic-00ce5173.pth",
             map_location="cpu",
-            check_hash=True,
+            check_hash=True, progress=False
         )
         model.load_state_dict(checkpoint["model"])
     if return_postprocessor:
@@ -136,7 +140,7 @@ def detr_resnet50_dc5_panoptic(
         checkpoint = torch.hub.load_state_dict_from_url(
             url="https://dl.fbaipublicfiles.com/detr/detr-r50-dc5-panoptic-da08f1b1.pth",
             map_location="cpu",
-            check_hash=True,
+            check_hash=True, progress=False
         )
         model.load_state_dict(checkpoint["model"])
     if return_postprocessor:
@@ -160,7 +164,7 @@ def detr_resnet101_panoptic(
         checkpoint = torch.hub.load_state_dict_from_url(
             url="https://dl.fbaipublicfiles.com/detr/detr-r101-panoptic-40021d53.pth",
             map_location="cpu",
-            check_hash=True,
+            check_hash=True, progress=False
         )
         model.load_state_dict(checkpoint["model"])
     if return_postprocessor:
